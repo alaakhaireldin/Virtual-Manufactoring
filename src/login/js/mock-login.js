@@ -6,7 +6,7 @@ function authenticate() {
     var password = document.getElementById("password").value;
     console.log(username, password);
     //check to see if the password and username match
-    if (username == "embloyee@gmail.com" && password == "pass12345") {
+    if (username == "employee@gmail.com" && password == "pass12345") {
         authorised = true;
     } else { // username or password do not match
         authorised = false;
