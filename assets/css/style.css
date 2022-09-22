@@ -10,8 +10,8 @@
   outline: none;
 }
 
-a {
-  color: #6777ef;
+a:not(button.collapsible) {
+  color: #000000;
   font-weight: 500;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -25,7 +25,8 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fal,
 a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
   margin-left: 4px;
 }
-
+#container { position: relative; }
+.imageView { border: 1px solid #000; }
 input:not(.submit) {
 width: 60%;
 float: right;
@@ -37,6 +38,32 @@ img {
   margin-right: auto
 }
 
+a.click-to-show {
+  pointer-events: none
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
 .submit {
   margin-left: 40%;
 }
@@ -829,9 +856,7 @@ select.form-control:not([size]):not([multiple]) {
   margin-right: -1px;
   margin-bottom: -15px;
 }
-.card.card-statistic-2 .card-chart canvas {
-  height: 90px !important;
-}
+
 .card .card-stats {
   width: 100%;
   display: inline-block;
@@ -939,9 +964,7 @@ select.form-control:not([size]):not([multiple]) {
   .card .card-stats .card-stats-items .card-stats-item .card-stats-item-count {
     font-size: 16px;
   }
-  .card.card-sm-6 .card-chart canvas {
-    height: 85px !important;
-  }
+
   .card.card-hero .card-header {
     padding: 25px;
   }

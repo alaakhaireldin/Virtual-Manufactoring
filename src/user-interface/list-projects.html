@@ -50,9 +50,9 @@
           </div>
           <ul class="sidebar-menu">
             <!-- Dashboard -->
-            <li class="active"><a class="nav-link" href="index.html"><i class="far fa-square"></i> <span>Dashboard</span></a></li>
+            <li><a class="nav-link" href="index.html"><i class="icon-dashboard"></i> <span>Dashboard</span></a></li>
             <!-- Projects -->
-              <li class="nav-item dropdown">
+            <li class="active">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Projects</span></a>
                 <ul class="dropdown-menu">
                   <li><a href="../user-interface/list-projects.html">List</a></li>
@@ -69,11 +69,11 @@
               </li>
               <!-- Members -->
               <li class="nav-item dropdown">
-                <a href="#" class="active"><i class="fa fa-industry"></i> <span>Members</span></a>
+                <a href="#"><i class="fa fa-industry"></i> <span>Members</span></a>
               </li>              
               <!-- Users -->
               <li class="nav-item dropdown">
-                <a href="#" class="active"><i class="fa fa-users"></i> <span>Users</span></a>
+                <a href="#"><i class="fa fa-users"></i> <span>Users</span></a>
               </li>
               <!-- Reports -->
               <li>
@@ -85,7 +85,7 @@
               </li>
               <!-- Profile -->
               <li>
-                <a href="#" class="nav-link"><i class="far fa-user"></i> <span>Edit Profile</span></a>
+                <a href="#"><i class="far fa-user"></i> <span>Edit Profile</span></a>
               </li>
               <!-- Log out -->
               <li><a href="../login/index.html"><i class="fas fa-power-off"></i> <span>Log Out</span></a></li>
@@ -93,11 +93,21 @@
       </div>
 
       <!-- Main Content -->
-      <div class="main-content">
+    <div class="main-content">
+    <section class="section">
+      <div class="section-header" onchange="loadFile(event)">
+        <h1>List of Projects</h1>
+      </div>
+
+    <section class="section">
+        <div class="addToList"">
+            
+        </div>
+    </section>
+
         <section class="section">
-          <div class="section-header">
-            <h1>List of Projects</h1>
-          </div>
+
+        </section>
 
   <!-- General JS Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
@@ -110,6 +120,18 @@
   <!-- Template JS File -->
   <script src="../../assets/js/scripts.js"></script>
 
-  <!-- Page Specific JS File -->
+  <script src="add-projects-on-list.js" > </script>
+  <script src="uplaodImage.js"></script>
+
+  <!-- Canvas script -->
+  <script type="text/javascript" src="example-2.js"></script>
+  <script src="upload-image-list.js">
+
+  </script>
+  <!-- importing files -->
+  <script type="text/javascript" src="add-projects-on-list.js"></script> 
+  <script type="text/javascript" src="upload-image-list.js"></script> 
+  <script src="change-canvas-bg.js"></script>
+  <script src="collapsable-list-item.js"></script>
 </body>
 </html>
