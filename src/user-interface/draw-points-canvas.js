@@ -1,6 +1,8 @@
 /* © 2009 ROBO Design
  * http://www.robodesign.ro
  */
+const newXCor =[]
+const newYCor =[]
 // Keep everything in anonymous function, called on window load.
 if(window.addEventListener) {
   window.addEventListener('load', function () {
@@ -13,19 +15,21 @@ if(window.addEventListener) {
         alert('Error: I cannot find the canvas element!');
         return;
       }
-  
+      
       if (!canvas.getContext) {
         alert('Error: no canvas.getContext!');
         return;
       }
-  
+      
       // Get the 2D canvas context.
       context = canvas.getContext('2d');
       if (!context) {
         alert('Error: failed to getContext!');
         return;
       }
-  
+      
+      
+      
       // Pencil tool instance.
       tool = new tool_pencil();
   
@@ -47,6 +51,10 @@ if(window.addEventListener) {
           context.beginPath();
           context.moveTo(ev._x, ev._y);
           tool.started = true;
+          context.fillRect(ev._x, ev._y, 10, 10); 
+          newXCor.push(ev._x - canvas.width/2)
+          newYCor.push(ev._y - canvas.height/2)
+          console.log(newXCor, newYCor);
       };
   
       // This function is called every time you move the mouse. Obviously, it only 
@@ -78,7 +86,7 @@ if(window.addEventListener) {
         ev._x = ev.offsetX;
         ev._y = ev.offsetY;
       }
-  
+
       // Call the event handler of the tool.
       var func = tool[ev.type];
       if (func) {

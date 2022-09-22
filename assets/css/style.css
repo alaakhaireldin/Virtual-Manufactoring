@@ -10,6 +10,7 @@
   outline: none;
 }
 
+
 a:not(button.collapsible) {
   color: #000000;
   font-weight: 500;
@@ -26,7 +27,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
   margin-left: 4px;
 }
 #container { position: relative; }
-.imageView { border: 1px solid #000; }
+#imageView { border: 1px solid #000; }
 input:not(.submit) {
 width: 60%;
 float: right;
