@@ -10,7 +10,7 @@ if(window.addEventListener) {
   
     function init () {
       // Find the canvas element.
-      canvas = document.getElementById('imageView');
+      canvas = $('#imageView')[0];
       if (!canvas) {
         alert('Error: I cannot find the canvas element!');
         return;

@@ -2,8 +2,8 @@ function authenticate() {
     var authorised;
 
     //get input values
-    var username = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
+    var username = $("#email")[0].value;
+    var password = $("#password")[0].value;
     console.log(username, password);
     //check to see if the password and username match
     if (username == "employee@gmail.com" && password == "pass12345") {

@@ -1,4 +1,4 @@
-var coll = document.getElementsByClassName("collapsible");
+var coll = $(".collapsible");
 var i;
 
 for (i = 0; i < coll.length; i++) {

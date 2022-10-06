@@ -1,4 +1,4 @@
-var canvas = document.getElementById("imageView"),
+var canvas = $("#imageView")[0],
 ctxCanvas = canvas.getContext("2d");
 
 canvas.width = 934;
