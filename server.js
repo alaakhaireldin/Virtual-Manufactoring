@@ -45,14 +45,6 @@ app.get("/dashboard", (req, res) => {
   res.render("dashboard.ejs");
 });
 
-// app.post("/", (req, res) => {
-//   res.sendFile(__dirname + "/public/dashboard.html");
-//   const projectTitle = req.body.Ptitle;
-//   const image = req.body.img;
-//   const logData = req.body.data;
-//   const unit = req.body.Unit;
-// });
-
 // Listen for requests
 var server = app.listen(app.get("port"), function () {
   console.log("The server is running on http://localhost:" + app.get("port"));
