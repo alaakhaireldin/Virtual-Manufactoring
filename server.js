@@ -6,40 +6,46 @@ const express = require("express"),
 
 //set the port
 app.set("port", 3000);
+
+app.set("view-engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 
 //tell express that we want to use the public folder
 //for our static assets
 app.use(express.static(path.join(__dirname, "public")));
 
-// const upload = multer({ dest: "uploads/" });
-// const multiUpload = upload.fields([
-//   { name: "img", maxCount: 1 },
-//   { name: "data", maxCount: 1 },
-// ]);
-
-app.post("/", multiUpload, (req, res) => {
-  res.sendFile(__dirname + "/public/dashboard.html");
-  const projectTitle = req.body.Ptitle;
-  const image = req.body.img;
-  const logData = req.body.data;
-  const unit = req.body.Unit;
-});
-
 app.get("/", (req, res) => {
-  console.log(__dirname);
-  res.sendFile(__dirname + "/public/list-projects.html");
+  res.render("index.ejs");
 });
 
-app.get("/", (req, res) => {
-  console.log(__dirname);
-  res.sendFile(__dirname + "/public/add-project.html");
+app.get("/list-projects", (req, res) => {
+  res.render("list-projects.ejs");
 });
 
-app.get("/", (req, res) => {
-  console.log(__dirname);
-  res.sendFile(__dirname + "/public/index.html");
+app.get("/add-project", (req, res) => {
+  res.render("add-project.ejs");
 });
+
+app.post("/dashboard", (req, res) => {
+  res.render("dashboard.ejs");
+});
+
+app.post("/list-project", (req, res) => {
+  res.render("list-projects.ejs");
+});
+
+app.get("/dashboard", (req, res) => {
+  res.render("dashboard.ejs");
+});
+
+// app.post("/", (req, res) => {
+//   res.sendFile(__dirname + "/public/dashboard.html");
+//   const projectTitle = req.body.Ptitle;
+//   const image = req.body.img;
+//   const logData = req.body.data;
+//   const unit = req.body.Unit;
+// });
 
 // Listen for requests
 var server = app.listen(app.get("port"), function () {
