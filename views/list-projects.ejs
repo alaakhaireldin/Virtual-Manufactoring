@@ -101,20 +101,22 @@
       </div>
 
     <section class="section">
+      <% newListItem.forEach(item => { %>
         <div>
-          <button type="button" class="collapsible" id="240">
-            <a href="https://apod.nasa.gov/apod/image/2202/AuroraPillars_Correia_4898.jpg">
-            first_project</a>
-          </button>
-          <div class="content">
-            <div id="container">
-              <canvas id="imageView" class="canvasImages" width="100" height="75">
+        <button type="button" class="collapsible" id="240">
+        <a href="https://apod.nasa.gov/apod/image/2202/AuroraPillars_Correia_4898.jpg">
+          <%= item %> </a>
+        </button>
+        <div class="content">
+          <div id="container">
+            <canvas id="imageView" class="canvasImages" width="100" height="75">
 
-              </canvas>
-            </div>
+            </canvas>
           </div>
-          <br></br>
         </div>
+        <br></br>
+      </div>
+        <% }) %>
     </section>
 
         <section class="section">

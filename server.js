@@ -2,7 +2,8 @@ const express = require("express"),
   path = require("path"),
   app = express(),
   bodyParser = require("body-parser"),
-  multer = require("multer");
+  multer = require("multer"),
+  projects = [];
 
 //set the port
 app.set("port", 3000);
@@ -20,7 +21,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/list-projects", (req, res) => {
-  res.render("list-projects.ejs");
+  res.render("list-projects.ejs", { newListItem: projects });
 });
 
 app.get("/add-project", (req, res) => {
@@ -31,8 +32,13 @@ app.post("/dashboard", (req, res) => {
   res.render("dashboard.ejs");
 });
 
-app.post("/list-project", (req, res) => {
-  res.render("list-projects.ejs");
+app.post("/list-projects", (req, res) => {
+  const projectTitle = req.body.Ptitle;
+  const image = req.body.img;
+  const logData = req.body.data;
+  const unit = req.body.Unit;
+  projects.push(projectTitle);
+  res.redirect("/list-projects");
 });
 
 app.get("/dashboard", (req, res) => {
