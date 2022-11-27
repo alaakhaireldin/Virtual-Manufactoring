@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(userInterfaceRoutes);
 app.use(loginRoutes);
 app.use((req, res, next) => {
-  res.status(404).send("<h1>Page not found</h1>");
+  res.render("error404.ejs");
 });
 // Listen for requests
 var server = app.listen(app.get("port"), function () {
