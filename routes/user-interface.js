@@ -16,6 +16,7 @@ router.post("/dashboard", (req, res) => {
 });
 
 router.post("/list-projects", (req, res) => {
+  // const id = Math.random().toString();
   const projectTitle = req.body.Ptitle;
   const image = req.body.img;
   const logData = req.body.data;
