@@ -1,3 +1,5 @@
+const Project = require("../models/project");
+
 const express = require("express"),
   projects = [];
 
@@ -21,7 +23,14 @@ router.post("/list-projects", (req, res) => {
   const image = req.body.img;
   const logData = req.body.data;
   const unit = req.body.Unit;
-  projects.push(projectTitle);
+  const project = new Project({
+    projectTitle: projectTitle,
+    imageURL: image,
+    logDataURL: logData,
+    unit: unit,
+  });
+  project.save().then((result) => console.log("Created Project"));
+  // projects.push(projectTitle);
   res.redirect("/list-projects");
 });
 
