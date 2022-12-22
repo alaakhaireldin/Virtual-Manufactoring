@@ -1,5 +1,5 @@
-# Virtual-Manufactoring
-Analyzing the path movement of a forklift (ONGOING PROJECT) 
+# Analyzing the path movement of a forklift (ONGOING PROJECT)
+ 
 
 Creating a full-stack project that analyzes the path movement of a forklift involves building a system that monitors and records the movements of a forklift as it moves through a facility or warehouse. This may involve using sensors or other tracking technologies to gather data on the forklift's location and movement, and developing algorithms or machine learning models to analyze this data in order to generate insights or predictions about the forklift's path. However, this project is using a CSV file with data on the forklift's movements.
 
